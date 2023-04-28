@@ -14,7 +14,8 @@ export const FOOTER = styled.section`
 `;
 
 export const Container = styled.div`
-  max-width: 1180px;
+  max-width: 1210px;
+  padding: 0 15px;
   margin: 0 auto;
 `;
 
@@ -22,7 +23,11 @@ export const Top = styled.div`
   padding: 48px 0 24px 0;
   display: flex;
   column-gap: 172px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.15); ;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
+    row-gap: 48px;
+  }
 `;
 
 export const Contacts = styled.div`
@@ -93,6 +98,10 @@ export const Nav = styled.nav`
   width: 100%;
   display: flex;
   justify-content: space-between;
+  @media screen and (max-width: 900px) {
+    flex-direction: column;
+    row-gap: 48px;
+  }
 `;
 
 export const Column = styled.div``;
@@ -102,6 +111,10 @@ export const Bottom = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-between;
+  @media screen and (max-width: 500px) {
+    flex-direction: column;
+    row-gap: 24px;
+  }
 `;
 
 export const ToTop = styled.div`

@@ -1,11 +1,6 @@
 import styled from "styled-components";
 import { ReactComponent as Logo } from "../../assets/icons/logo.svg";
 import { ReactComponent as Person } from "../../assets/icons/person.svg";
-import { ReactComponent as InputLogo } from "../../assets/icons/input-icon.svg";
-import { ReactComponent as StatusLogo } from "../../assets/icons/status.svg";
-import { ReactComponent as PriceLogo } from "../../assets/icons/price.svg";
-import { ReactComponent as AdvancedLogo } from "../../assets/icons/advanced.svg";
-import { ReactComponent as SearchLogo } from "../../assets/icons/search.svg";
 import { ReactComponent as Burger } from "../../assets/icons/burger.svg";
 import { ReactComponent as FacebookB } from "../../assets/icons/facebookB.svg";
 import { ReactComponent as TwitterB } from "../../assets/icons/twitterB.svg";
@@ -13,14 +8,15 @@ import { ReactComponent as InstagramB } from "../../assets/icons/instagramB.svg"
 import { ReactComponent as LinkedinB } from "../../assets/icons/linkedinB.svg";
 import { ReactComponent as CloseIcon } from "../../assets/icons/close.svg";
 
-export const HEADER = styled.header`
+export const HeaderBlock = styled.header`
   width: 100%;
   position: sticky;
   top: 0;
   left: 0;
   z-index: 10;
-  ${(props) =>
-    props.y > 50 ? "box-shadow: 0 0 100px 0 #0D263B" : "box-shadow: none"};
+  padding: 15px 0;
+  background: #0d263b;
+  overflow: hidden;
 `;
 
 export const Container = styled.div`
@@ -46,15 +42,24 @@ export const Container = styled.div`
       }
     }
   }}
-`;
-
-export const HeaderBlock = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 0;
-  background: #0d263b;
-  overflow: hidden;
+  @media screen and (max-width: 900px) {
+    ${(prop) => {
+      switch (prop.type) {
+        case "headerFilter": {
+          return `
+					padding: 24px;
+					background: #FFFFFF;
+					box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.04), 0px 0px 14px rgba(0, 0, 0, 0.04), 0px 1px 5px rgba(0, 0, 0, 0.04);
+					border-radius: 3px;
+					flex-wrap: wrap;
+					justify-content: space-between;
+					row-gap: 24px;
+					column-gap: 12px;
+				`;
+        }
+      }
+    }}
+  }
 `;
 
 export const HeaderLogo = styled.button`
@@ -66,7 +71,8 @@ export const HeaderLogo = styled.button`
 export const HeaderNav = styled.nav`
   position: relative;
   @media screen and (max-width: 500px) {
-    position: absolute;
+    position: fixed;
+    z-index: 15;
     top: 0;
     left: 0;
     width: 100vw;
@@ -168,73 +174,9 @@ export const HeaderProfile = styled.button`
 export const HeaderIcons = styled.div``;
 HeaderIcons.Logo = styled(Logo)``;
 HeaderIcons.Person = styled(Person)``;
-HeaderIcons.InputLogo = styled(InputLogo)``;
-HeaderIcons.StatusLogo = styled(StatusLogo)``;
-HeaderIcons.PriceLogo = styled(PriceLogo)``;
-HeaderIcons.AdvancedLogo = styled(AdvancedLogo)``;
-HeaderIcons.SearchLogo = styled(SearchLogo)``;
 HeaderIcons.Burger = styled(Burger)``;
 HeaderIcons.FacebookB = styled(FacebookB)``;
 HeaderIcons.InstagramB = styled(InstagramB)``;
 HeaderIcons.TwitterB = styled(TwitterB)``;
 HeaderIcons.LinkedinB = styled(LinkedinB)``;
 HeaderIcons.CloseIcon = styled(CloseIcon)``;
-
-export const HeaderFilter = styled.div`
-  padding: 10px 0;
-  background-color: #ffffff;
-  column-gap: 20px;
-
-  .header_input {
-    flex: 1;
-    display: flex;
-    align-items: center;
-    column-gap: 8px;
-    border: 1px solid #e6e9ec;
-    border-radius: 2px;
-    padding: 15px;
-
-    input {
-      flex: 1;
-      border: none;
-      outline: none;
-      height: 100%;
-    }
-
-    input::placeholder {
-      font-family: "Montserrat";
-      font-style: normal;
-      font-weight: 400;
-      font-size: 14px;
-      line-height: 20px;
-      color: #0d263b;
-    }
-  }
-`;
-
-export const HeaderButton = styled.button`
-  display: flex;
-  align-items: center;
-  background: none;
-  column-gap: 8px;
-  font-family: "Montserrat";
-  font-style: normal;
-  font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
-  cursor: pointer;
-  border-radius: 2px;
-  ${(prop) =>
-    prop.search
-      ? `	
-			padding: 12px 54px;
-			color: white;
-			background: #0061DF;
-			border: 1px solid #0061DF;
-			`
-      : `	
-			padding: 12px 30px;
-			color: #0D263B;
-			border: 1px solid #E6E9EC;
-		`}
-`;

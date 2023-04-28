@@ -6,12 +6,13 @@ import House3 from "../../../assets/house3.png";
 import Profile1 from "../../../assets/profile1.svg";
 import Profile2 from "../../../assets/profile2.svg";
 import Profile3 from "../../../assets/profile3.svg";
+import { reducer } from "./reducer";
 
 const CardContext = createContext();
 export const Cards = () => useContext(CardContext);
 
 export const CardList = ({ children }) => {
-  const [data, dispatch] = useReducer(() => {}, [
+  const [data, dispatch] = useReducer(reducer, [
     {
       id: 1,
       houseImage: House1,
@@ -59,6 +60,60 @@ export const CardList = ({ children }) => {
     },
     {
       id: 6,
+      houseImage: House3,
+      profileImage: Profile3,
+      beds: "4 Beds",
+      baths: "5 Baths",
+      garage: "1 Garage",
+      area: "1200 Sq Ft",
+    },
+    {
+      id: 7,
+      houseImage: House1,
+      profileImage: Profile1,
+      beds: "4 Beds",
+      baths: "5 Baths",
+      garage: "1 Garage",
+      area: "1200 Sq Ft",
+    },
+    {
+      id: 8,
+      houseImage: House2,
+      profileImage: Profile2,
+      beds: "4 Beds",
+      baths: "5 Baths",
+      garage: "1 Garage",
+      area: "1200 Sq Ft",
+    },
+    {
+      id: 9,
+      houseImage: House3,
+      profileImage: Profile3,
+      beds: "4 Beds",
+      baths: "5 Baths",
+      garage: "1 Garage",
+      area: "1200 Sq Ft",
+    },
+    {
+      id: 10,
+      houseImage: House1,
+      profileImage: Profile1,
+      beds: "4 Beds",
+      baths: "5 Baths",
+      garage: "1 Garage",
+      area: "1200 Sq Ft",
+    },
+    {
+      id: 11,
+      houseImage: House2,
+      profileImage: Profile2,
+      beds: "4 Beds",
+      baths: "5 Baths",
+      garage: "1 Garage",
+      area: "1200 Sq Ft",
+    },
+    {
+      id: 12,
       houseImage: House3,
       profileImage: Profile3,
       beds: "4 Beds",

@@ -5,12 +5,19 @@ import { ReactComponent as CarG } from "../../assets/icons/carG.svg";
 import { ReactComponent as RulerG } from "../../assets/icons/rulerG.svg";
 import { ReactComponent as ExpandG } from "../../assets/icons/expandG.svg";
 import { ReactComponent as LoveG } from "../../assets/icons/loveG.svg";
+import { ReactComponent as X } from "../../assets/icons/x.svg";
 
 export const CARD = styled.div`
+  position: relative;
   border: 1px solid #e6e9ec;
   box-sizing: border-box;
   .card_image {
     position: relative;
+    width: 100%;
+    img {
+      width: 100%;
+      vertical-align: top;
+    }
   }
   .card_bottom {
     position: relative;
@@ -125,6 +132,21 @@ export const CardSubtitle = styled.h4`
       : null};
 `;
 
+export const Delete = styled.button`
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  border: none;
+`;
+
 export const RecommendedIcons = styled.div``;
 RecommendedIcons.BedG = styled(BedG)``;
 RecommendedIcons.BathG = styled(BathG)``;
@@ -132,3 +154,7 @@ RecommendedIcons.CarG = styled(CarG)``;
 RecommendedIcons.RulerG = styled(RulerG)``;
 RecommendedIcons.ExpandG = styled(ExpandG)``;
 RecommendedIcons.LoveG = styled(LoveG)``;
+RecommendedIcons.X = styled(X)`
+  width: 20px;
+  height: 20px;
+`;

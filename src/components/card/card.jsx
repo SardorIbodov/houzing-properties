@@ -6,9 +6,10 @@ import {
   CardTitle,
   Profile,
   RecommendedIcons,
+  Delete,
 } from "./cardStyle";
 
-export const Card = ({ data }) => {
+export const Card = ({ data, dispatch }) => {
   return (
     <CARD>
       <div className="card_image">
@@ -55,6 +56,9 @@ export const Card = ({ data }) => {
           </div>
         </div>
       </div>
+      <Delete onClick={() => dispatch({ type: "delete", id: data.id })}>
+        <RecommendedIcons.X></RecommendedIcons.X>
+      </Delete>
     </CARD>
   );
 };
